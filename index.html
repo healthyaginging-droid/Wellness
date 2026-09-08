@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transform Your Health &amp; Vitality — Dr. Ceabert J. Griffith Wellness Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sunrise:#FF8A5B;
+    --sunrise-dark:#E86F41;
+    --teal:#1D6E66;
+    --teal-deep:#134F49;
+    --honey:#F5B942;
+    --cream:#FFF7EE;
+    --sage:#E9F1E6;
+    --ink:#2B2A26;
+    --ink-soft:#5B584F;
+    --white:#FFFFFF;
+    --line:#E7DFD1;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:10px;
+    --shadow-soft:0 14px 34px rgba(43,42,38,0.08);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Karla', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Quicksand', sans-serif;
+    color:var(--teal-deep);
+    margin:0 0 .5em 0;
+    line-height:1.2;
+  }
+  p{margin:0 0 1em 0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  section{padding:88px 0;}
+  .eyebrow-soft{
+    display:inline-block;
+    color:var(--sunrise-dark);
+    font-weight:700;
+    font-family:'Quicksand',sans-serif;
+    font-size:15px;
+    margin-bottom:10px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;
+    font-size:16px;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary{
+    background:var(--sunrise);
+    color:var(--white);
+    box-shadow:0 10px 24px rgba(255,138,91,0.38);
+  }
+  .btn-primary:hover{background:var(--sunrise-dark); transform:translateY(-2px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--teal-deep);
+    border-color:var(--teal-deep);
+  }
+  .btn-ghost:hover{background:var(--teal-deep); color:var(--white);}
+  .btn-light{
+    background:var(--white);
+    color:var(--teal-deep);
+  }
+  .btn-light:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.12);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,247,238,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Quicksand',sans-serif; font-weight:700; font-size:19px;
+    color:var(--teal-deep);
+  }
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--honey);}
+  .nav-links{display:flex; align-items:center; gap:30px; font-weight:600; font-size:15px;}
+  .nav-links a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
+  .nav-links a:hover{color:var(--sunrise-dark);}
+  .nav-cta{display:flex; align-items:center; gap:18px;}
+  .menu-toggle{display:none; background:none; border:none; cursor:pointer;}
+  .menu-toggle svg{width:26px; height:26px;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--cream);
+      flex-direction:column; align-items:flex-start;
+      padding:18px 28px 26px; gap:16px;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .nav-cta .btn-ghost{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:76px 0 60px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:50px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 54px);
+    letter-spacing:-.01em;
+  }
+  .hero .lede{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-cn{
+    font-size:15px;
+    color:var(--teal);
+    font-weight:600;
+    margin-top:-6px;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;}
+  .credential-row{
+    display:flex; gap:22px; margin-top:38px; flex-wrap:wrap;
+  }
+  .credential-row .item{display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--ink-soft); font-weight:600;}
+  .credential-row svg{width:20px;height:20px;flex:none;color:var(--teal);}
+
+  .hero-art{position:relative; display:flex; justify-content:center;}
+  .art-card{
+    background:var(--teal-deep);
+    border-radius:32px;
+    padding:34px;
+    width:100%;
+    max-width:400px;
+    position:relative;
+    box-shadow:var(--shadow-soft);
+  }
+  .art-card svg{width:100%; height:auto; display:block;}
+  .floating-chip{
+    position:absolute;
+    background:var(--white);
+    border-radius:16px;
+    padding:12px 16px;
+    box-shadow:0 12px 26px rgba(19,79,73,0.18);
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:var(--teal-deep);
+    display:flex; align-items:center; gap:8px;
+    opacity:0;
+    transform:translateY(14px);
+    animation:chipIn .7s ease forwards;
+  }
+  .floating-chip svg{width:18px;height:18px;color:var(--sunrise);}
+  .chip-1{top:-14px; left:-18px; animation-delay:.6s;}
+  .chip-2{bottom:36px; right:-26px; animation-delay:.9s;}
+  .chip-3{bottom:-16px; left:18px; animation-delay:1.2s;}
+  @keyframes chipIn{to{opacity:1; transform:translateY(0);}}
+
+  .hero h1, .hero .lede, .hero-cn, .hero-actions, .credential-row{
+    opacity:0; transform:translateY(16px);
+    animation:riseIn .7s ease forwards;
+  }
+  .hero h1{animation-delay:.05s;}
+  .hero-cn{animation-delay:.15s;}
+  .hero .lede{animation-delay:.25s;}
+  .hero-actions{animation-delay:.4s;}
+  .credential-row{animation-delay:.55s;}
+  @keyframes riseIn{to{opacity:1; transform:translateY(0);}}
+
+  /* ---------- STATS ---------- */
+  .stats{
+    background:var(--teal-deep);
+    color:var(--white);
+    padding:0;
+  }
+  .stats-inner{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    text-align:center;
+    padding:44px 0;
+  }
+  .stats-inner div + div{border-left:1px solid rgba(255,255,255,0.16);}
+  .stat-num{
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;
+    font-size:clamp(30px,4vw,44px);
+    color:var(--honey);
+  }
+  .stat-label{font-size:14.5px; color:rgba(255,255,255,.82); margin-top:4px;}
+
+  /* ---------- ABOUT ---------- */
+  .section-head{max-width:640px; margin-bottom:46px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,36px);}
+  .section-head p{color:var(--ink-soft); font-size:17px;}
+
+  .credential-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .cred-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:30px 26px;
+    border:1px solid var(--line);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cred-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-soft);}
+  .cred-icon{
+    width:52px; height:52px; border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--sage); margin-bottom:16px;
+  }
+  .cred-icon svg{width:26px; height:26px; color:var(--teal);}
+  .cred-card h3{font-size:19px; margin-bottom:8px;}
+  .cred-card p{color:var(--ink-soft); font-size:15px; margin:0;}
+  .book-list{list-style:none; padding:0; margin:14px 0 0; font-size:14.5px;}
+  .book-list li{
+    padding:8px 0; border-top:1px dashed var(--line);
+    color:var(--ink-soft); display:flex; gap:8px;
+  }
+  .book-list li:first-child{border-top:none;}
+  .book-list svg{width:16px;height:16px;flex:none;margin-top:3px;color:var(--sunrise-dark);}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--sage);}
+  .cat-nav{
+    display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px;
+  }
+  .cat-btn{
+    border:2px solid var(--teal);
+    background:transparent;
+    color:var(--teal-deep);
+    padding:10px 18px;
+    border-radius:999px;
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    cursor:pointer;
+    transition:background .18s, color .18s;
+  }
+  .cat-btn.active, .cat-btn:hover{background:var(--teal); color:var(--white);}
+
+  .cat-panel{
+    display:none;
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    padding:36px;
+    box-shadow:var(--shadow-soft);
+  }
+  .cat-panel.active{display:block; animation:panelIn .35s ease;}
+  @keyframes panelIn{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);}}
+
+  .cat-panel-head{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
+  .cat-panel-head .icon-wrap{
+    width:58px; height:58px; border-radius:18px;
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .cat-panel-head .icon-wrap svg{width:28px; height:28px; color:var(--white);}
+  .cat-panel-head h3{margin:0; font-size:22px;}
+  .cat-panel-head p{margin:2px 0 0; color:var(--ink-soft); font-size:14.5px;}
+
+  .condition-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(190px,1fr));
+    gap:14px;
+  }
+  .condition-chip{
+    background:var(--cream);
+    border-radius:var(--radius-sm);
+    padding:16px 18px;
+    font-weight:600;
+    font-size:15px;
+    color:var(--ink);
+    border-left:4px solid var(--sunrise);
+  }
+
+  /* ---------- APPROACH BAND ---------- */
+  .approach{
+    background:var(--teal-deep);
+    color:var(--white);
+    text-align:center;
+  }
+  .approach .wrap{max-width:760px;}
+  .quote-mark{
+    width:44px; height:44px; margin:0 auto 18px;
+    color:var(--honey);
+  }
+  .approach h2{color:var(--white); font-size:clamp(24px,3vw,32px); font-weight:600;}
+  .approach p{color:rgba(255,255,255,.82); font-size:17px;}
+
+  /* ---------- PRICING ---------- */
+  .pricing-card{
+    max-width:620px;
+    margin:0 auto;
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    padding:42px;
+    position:relative;
+    box-shadow:var(--shadow-soft);
+    border:2px solid var(--sunrise);
+  }
+  .ribbon{
+    position:absolute; top:-16px; left:36px;
+    background:var(--sunrise);
+    color:var(--white);
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;
+    font-size:13.5px;
+    padding:8px 16px;
+    border-radius:999px;
+  }
+  .price-row{display:flex; align-items:baseline; gap:8px; margin:18px 0 6px;}
+  .price-num{font-family:'Quicksand',sans-serif; font-weight:700; font-size:52px; color:var(--teal-deep);}
+  .price-unit{font-size:16px; color:var(--ink-soft); font-weight:600;}
+  .pricing-list{list-style:none; padding:0; margin:22px 0 28px;}
+  .pricing-list li{display:flex; gap:10px; padding:9px 0; font-size:15.5px; color:var(--ink-soft);}
+  .pricing-list svg{width:19px;height:19px;flex:none;color:var(--teal); margin-top:2px;}
+
+  /* ---------- DISCLAIMER ---------- */
+  .disclaimer-box{
+    background:#FFF3E0;
+    border:2px dashed var(--honey);
+    border-radius:var(--radius-md);
+    padding:30px 32px;
+    display:flex;
+    gap:20px;
+  }
+  .disclaimer-box .icon-wrap{
+    width:46px; height:46px; border-radius:14px; background:var(--honey);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .disclaimer-box .icon-wrap svg{width:24px;height:24px;color:var(--white);}
+  .disclaimer-box h3{margin-bottom:6px; font-size:19px;}
+  .disclaimer-box p{margin:0; color:var(--ink-soft); font-size:15px;}
+  .disclaimer-tags{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+  .disclaimer-tags span{
+    background:var(--white);
+    border-radius:999px;
+    padding:6px 14px;
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--teal-deep);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .contact-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:28px 24px;
+    border:1px solid var(--line);
+    text-decoration:none;
+    display:block;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s;
+  }
+  .contact-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-soft); border-color:var(--sunrise);}
+  .contact-card .icon-wrap{
+    width:48px; height:48px; border-radius:14px;
+    background:var(--sage); display:flex; align-items:center; justify-content:center;
+    margin-bottom:14px;
+  }
+  .contact-card .icon-wrap svg{width:24px;height:24px;color:var(--teal);}
+  .contact-card h4{font-size:16px; margin:0 0 4px; color:var(--teal-deep); font-family:'Quicksand',sans-serif; font-weight:700;}
+  .contact-card p{margin:0; color:var(--ink-soft); font-size:14.5px; word-break:break-word;}
+
+  .final-cta{
+    text-align:center;
+    margin-top:52px;
+    background:var(--sunrise);
+    border-radius:var(--radius-lg);
+    padding:48px 30px;
+    color:var(--white);
+  }
+  .final-cta h2{color:var(--white); font-size:clamp(24px,3vw,32px);}
+  .final-cta p{color:rgba(255,255,255,.92); font-size:16.5px; max-width:520px; margin:0 auto 24px;}
+
+  footer{
+    background:var(--teal-deep);
+    color:rgba(255,255,255,.8);
+    padding:40px 0 30px;
+    font-size:14px;
+  }
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  footer .foot-brand{font-family:'Quicksand',sans-serif; font-weight:700; color:var(--white); font-size:16px;}
+  footer .fine-print{max-width:560px; color:rgba(255,255,255,.55); font-size:12.5px; margin-top:8px;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{order:-1;}
+    .credential-cards{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .stats-inner{grid-template-columns:1fr; gap:20px;}
+    .stats-inner div + div{border-left:none; border-top:1px solid rgba(255,255,255,0.16); padding-top:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand"><span class="dot"></span> Dr. Ceabert J. Griffith</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow-soft">Wellness Coaching, one honest step at a time</span>
+      <h1>Transform your health &amp; vitality</h1>
+      <div class="hero-cn">用一步一步的陪伴，找回你的健康與活力</div>
+      <p class="lede">Personalized coaching from a family medicine physician and Harvard-trained wellness coach — built around your energy, your pain points, and the life you want to keep living.</p>
+      <div class="hero-actions">
+        <a href="mailto:okiwellnessdoc@yahoo.com?subject=Free%20Wellness%20Consultation" class="btn btn-primary">
+          Book a free chat
+        </a>
+        <a href="#services" class="btn btn-ghost">See how I can help</a>
+      </div>
+      <div class="credential-row">
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg>
+          Family Medicine &amp; Public Health
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          Harvard-Trained Wellness Coach
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+          Bestselling Author
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="art-card">
+        <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F5B942"/>
+              <stop offset="100%" stop-color="#FF8A5B"/>
+            </linearGradient>
+          </defs>
+          <circle cx="150" cy="130" r="58" fill="url(#skyGrad)"/>
+          <path d="M0 175 Q75 140 150 175 T300 175 V220 H0 Z" fill="#0F3F3A"/>
+          <path d="M0 190 Q75 160 150 190 T300 190 V220 H0 Z" fill="#134F49"/>
+          <polyline points="20,178 60,178 72,150 88,196 102,160 118,178 160,178" fill="none" stroke="#FFF7EE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="160" y1="178" x2="286" y2="178" stroke="rgba(255,247,238,.5)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="floating-chip chip-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 21-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.19L12 21Z"/></svg>
+        15 Power Habits
+      </div>
+      <div class="floating-chip chip-2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Real, doable habits
+      </div>
+      <div class="floating-chip chip-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        Whole-person care
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap stats-inner">
+    <div>
+      <div class="stat-num" data-target="15">0</div>
+      <div class="stat-label">Power Habits framework</div>
+    </div>
+    <div>
+      <div class="stat-num" data-target="3">0</div>
+      <div class="stat-label">Published books on wellness</div>
+    </div>
+    <div>
+      <div class="stat-num" data-target="5">0</div>
+      <div class="stat-label">Areas of coaching support</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-soft">Who you'll be working with</span>
+      <h2>Medical training meets everyday coaching</h2>
+      <p>Dr. Ceabert J. Griffith blends clinical grounding with a coach's warmth — so the plan you get is realistic, not just correct on paper.</p>
+    </div>
+
+    <div class="credential-cards">
+      <div class="cred-card">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg>
+        </div>
+        <h3>Family Medicine &amp; Public Health</h3>
+        <p>Years of clinical practice paired with a public-health view of what actually keeps people well over the long run.</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+        </div>
+        <h3>Harvard-Trained Wellness Coach</h3>
+        <p>Formal coaching training on top of medical practice, focused on habit change that actually sticks.</p>
+      </div>
+
+      <div class="cred-card">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        </div>
+        <h3>Bestselling Author</h3>
+        <ul class="book-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 15 Power Habits of Wellness</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 11 Power Habits to Defeat High Blood Pressure</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 9 Simple Steps to Prevent Cancer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-soft">Where we can start</span>
+      <h2>Coaching built around how you actually feel</h2>
+      <p>Pick the area that sounds most like you right now — most people find their coaching plan touches two or three of these at once.</p>
+    </div>
+
+    <div class="cat-nav" id="catNav">
+      <button class="cat-btn active" data-cat="energy">Energy &amp; Mobility</button>
+      <button class="cat-btn" data-cat="pain">Pain &amp; Comfort</button>
+      <button class="cat-btn" data-cat="rest">Rest &amp; Cognitive Health</button>
+      <button class="cat-btn" data-cat="metabolic">Metabolic &amp; Internal Wellness</button>
+      <button class="cat-btn" data-cat="prevention">Prevention &amp; Longevity</button>
+    </div>
+
+    <div class="cat-panel active" id="panel-energy">
+      <div class="cat-panel-head">
+        <div class="icon-wrap" style="background:var(--sunrise);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        </div>
+        <div>
+          <h3>Energy &amp; Mobility</h3>
+          <p>For the days that feel heavier than they should.</p>
+        </div>
+      </div>
+      <div class="condition-grid">
+        <div class="condition-chip">Chronic Fatigue</div>
+        <div class="condition-chip">Fibromyalgia</div>
+        <div class="condition-chip">IBS &amp; Constipation</div>
+        <div class="condition-chip">Balance Issues</div>
+      </div>
+    </div>
+
+    <div class="cat-panel" id="panel-pain">
+      <div class="cat-panel-head">
+        <div class="icon-wrap" style="background:var(--teal);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 21-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.19L12 21Z"/></svg>
+        </div>
+        <div>
+          <h3>Pain &amp; Comfort</h3>
+          <p>Gentle, sustainable ways to move through daily pain.</p>
+        </div>
+      </div>
+      <div class="condition-grid">
+        <div class="condition-chip">Arthritis &amp; Joint Pain</div>
+        <div class="condition-chip">Muscle Stiffness</div>
+        <div class="condition-chip">Osteoporosis</div>
+        <div class="condition-chip">Chronic Headaches</div>
+      </div>
+    </div>
+
+    <div class="cat-panel" id="panel-rest">
+      <div class="cat-panel-head">
+        <div class="icon-wrap" style="background:var(--honey);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </div>
+        <div>
+          <h3>Rest &amp; Cognitive Health</h3>
+          <p>Sleeping better, thinking clearer, worrying less.</p>
+        </div>
+      </div>
+      <div class="condition-grid">
+        <div class="condition-chip">Insomnia</div>
+        <div class="condition-chip">Stress &amp; Anxiety</div>
+        <div class="condition-chip">Depression</div>
+        <div class="condition-chip">Poor Memory</div>
+      </div>
+    </div>
+
+    <div class="cat-panel" id="panel-metabolic">
+      <div class="cat-panel-head">
+        <div class="icon-wrap" style="background:var(--sunrise-dark);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        </div>
+        <div>
+          <h3>Metabolic &amp; Internal Wellness</h3>
+          <p>Steadier numbers, fewer surprises at the doctor's office.</p>
+        </div>
+      </div>
+      <div class="condition-grid">
+        <div class="condition-chip">Weight Gain</div>
+        <div class="condition-chip">Hypertension &amp; Diabetes</div>
+        <div class="condition-chip">Kidney Disease</div>
+      </div>
+    </div>
+
+    <div class="cat-panel" id="panel-prevention">
+      <div class="cat-panel-head">
+        <div class="icon-wrap" style="background:var(--teal-deep);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/></svg>
+        </div>
+        <div>
+          <h3>Prevention &amp; Longevity</h3>
+          <p>Playing the long game, one habit at a time.</p>
+        </div>
+      </div>
+      <div class="condition-grid">
+        <div class="condition-chip">Cancer &amp; Heart Disease Prevention</div>
+        <div class="condition-chip">Menopause Support</div>
+        <div class="condition-chip">General Healthy Aging Plan</div>
+        <div class="condition-chip">Supplement Education</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="wrap">
+    <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M7 6c-3 1.5-4 4-4 7v5h6v-6H6c0-2 1-3.5 3-4.5L7 6Zm10 0c-3 1.5-4 4-4 7v5h6v-6h-3c0-2 1-3.5 3-4.5L17 6Z"/></svg>
+    <h2>You don't need a perfect plan. You need one that fits your actual life.</h2>
+    <p>Every coaching relationship starts with listening — to your history, your habits, and what's realistic for the season you're in. From there, we build small, repeatable habits that stack into real change.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <span class="eyebrow-soft">Simple, honest pricing</span>
+      <h2>Invest in your health, on your terms</h2>
+    </div>
+
+    <div class="pricing-card">
+      <span class="ribbon">Most people start here</span>
+      <h3 style="margin-bottom:0;">One-on-one coaching</h3>
+      <div class="price-row">
+        <span class="price-num">$50</span>
+        <span class="price-unit">/ hour</span>
+      </div>
+      <p style="color:var(--ink-soft); font-size:15px;">Monthly rates are also available for people who want ongoing, regular support.</p>
+
+      <ul class="pricing-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Pay-as-you-go hourly sessions or monthly packages
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Secure payment processed through PayPal
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Pay with a debit card, credit card, or linked bank account
+        </li>
+      </ul>
+
+      <a href="mailto:okiwellnessdoc@yahoo.com?subject=Coaching%20Pricing%20Question" class="btn btn-primary" style="width:100%; justify-content:center;">
+        Ask about getting started
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="disclaimer-box">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+      </div>
+      <div>
+        <h3>Please read before booking</h3>
+        <p>Wellness coaching is a supportive partnership, not a diagnosis or a prescription. It works best alongside — never instead of — the care you already receive from your doctors.</p>
+        <div class="disclaimer-tags">
+          <span>Supportive Partnership</span>
+          <span>Adjunctive Coaching</span>
+          <span>Not a Medical Treatment Replacement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-soft">Let's talk</span>
+      <h2>Reach out whenever you're ready</h2>
+      <p>No pressure, no sales script — just a real conversation about where you are and whether coaching makes sense for you.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:okiwellnessdoc@yahoo.com">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </div>
+        <h4>Email</h4>
+        <p>okiwellnessdoc@yahoo.com</p>
+      </a>
+
+      <a class="contact-card" href="https://doxy.me/pubhealthdoc" target="_blank" rel="noopener">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10 20 7v10l-5-3Z"/><rect x="2" y="6" width="13" height="12" rx="2"/></svg>
+        </div>
+        <h4>Online Office</h4>
+        <p>doxy.me/pubhealthdoc</p>
+      </a>
+
+      <div class="contact-card" style="cursor:default;">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        </div>
+        <h4>Phone Consultations</h4>
+        <p>Available for clients in the US &amp; Japan — email to arrange a time</p>
+      </div>
+    </div>
+
+    <div class="final-cta">
+      <h2>Your habits shape your life. Let's shape a few good ones.</h2>
+      <p>Send a quick email and share what's going on — energy, pain, sleep, or something else entirely. We'll take it from there.</p>
+      <a href="mailto:okiwellnessdoc@yahoo.com?subject=Free%20Wellness%20Consultation" class="btn btn-light">Book your free consultation</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">Dr. Ceabert J. Griffith Wellness Coaching</div>
+      <div class="fine-print">Coaching is educational and supportive in nature and is not a substitute for diagnosis, treatment, or advice from a licensed medical professional. Always consult your own doctor about your specific health needs.</div>
+    </div>
+    <div>okiwellnessdoc@yahoo.com</div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // services category switch
+  const catBtns = document.querySelectorAll('.cat-btn');
+  const panels = document.querySelectorAll('.cat-panel');
+  catBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catBtns.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.cat).classList.add('active');
+    });
+  });
+
+  // stat count-up, once, on load
+  const statEls = document.querySelectorAll('.stat-num');
+  function animateStat(el){
+    const target = parseInt(el.dataset.target, 10);
+    let cur = 0;
+    const step = Math.max(1, Math.round(target / 30));
+    const tick = () => {
+      cur += step;
+      if(cur >= target){ el.textContent = target; return; }
+      el.textContent = cur;
+      requestAnimationFrame(tick);
+    };
+    tick();
+  }
+  window.addEventListener('load', () => statEls.forEach(animateStat));
+</script>
+
+</body>
+</html>
